@@ -46,7 +46,7 @@ Piece TicTacToeBoard::placePiece(int row, int column)
     toggleTurn();
   }
   // Always return piece at location
-  return boardPiece;
+  return getPiece(row, column);
 }
 
 /**
@@ -73,7 +73,6 @@ Piece TicTacToeBoard::getPiece(int row, int column)
 Piece TicTacToeBoard::getWinner()
 {
   bool anyBlank = false;
-  Piece winner = Invalid;
 
   // Check rows for winner
   for (int row=0; row<BOARDSIZE; row++){
