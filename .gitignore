@@ -27,3 +27,11 @@
 *.exe
 *.out
 *.app
+
+# gtest files
+*.gcov
+*.gcda
+*.gcno
+
+# Compiled Binaries
+TicTacToeBoardTest
