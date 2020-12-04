@@ -137,3 +137,75 @@ TEST(TicTacToeBoard, getWinnerBlank) {
 
   ASSERT_TRUE(board.getWinner() == Blank);
 }
+
+TEST(TicTacToeBoardTest, getWinnerLeftDiagonal) {
+  TicTacToeBoard board;
+
+  // Fill in the board, x wins diagonal
+  /*
+  xo-
+  ox-
+  --x
+  */
+  board.placePiece(0,0);
+  board.placePiece(0,1);
+  board.placePiece(1,1);
+  board.placePiece(1,0);
+  board.placePiece(2,2);
+
+  ASSERT_TRUE(board.getWinner() == X);
+}
+
+TEST(TicTacToeBoardTest, getWinnerRightDiagonal) {
+  TicTacToeBoard board;
+
+  // Fill in the board, x wins diagonal
+  /*
+  -ox
+  ox-
+  x--
+  */
+  board.placePiece(0,2);
+  board.placePiece(0,1);
+  board.placePiece(1,1);
+  board.placePiece(1,0);
+  board.placePiece(2,0);
+
+  ASSERT_TRUE(board.getWinner() == X);
+}
+
+TEST(TicTacToeBoardTest, getWinnerVertical) {
+  TicTacToeBoard board;
+
+  // Fill in the board, x wins vertical
+  /*
+  xo-
+  xo-
+  x--
+  */
+  board.placePiece(0,0);
+  board.placePiece(0,1);
+  board.placePiece(1,0);
+  board.placePiece(1,1);
+  board.placePiece(2,0);
+
+  ASSERT_TRUE(board.getWinner() == X);
+}
+
+TEST(TicTacToeBoardTest, getWinnerHorizontal) {
+  TicTacToeBoard board;
+
+  // Fill in the board, x wins horizontal
+  /*
+  oo-
+  xxx
+  ---
+  */
+  board.placePiece(1,0);
+  board.placePiece(0,0);
+  board.placePiece(1,1);
+  board.placePiece(0,1);
+  board.placePiece(1,2);
+
+  ASSERT_TRUE(board.getWinner() == X);
+}
